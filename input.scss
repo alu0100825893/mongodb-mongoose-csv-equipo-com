@@ -1,0 +1,18 @@
+$font-stack:    Helvetica, sans-serif;
+$color-titulo: red;
+$color-fondo: black;
+$color-letra: white;
+$color-tabla: green;
+$borde-tabla: 1px;
+
+h1 {
+  color: $color-titulo;
+}
+body {
+  background-color: $color-fondo;
+  color: $color-letra;
+}
+
+table , th, td {
+   border: $borde-tabla solid $color-tabla;
+}
