@@ -5,6 +5,8 @@ var gulp    = require('gulp'),
 var del     = require('del');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS  = require('gulp-minify-css');
+var karma   = require('gulp-karma');
+var ghPages = require('gulp-gh-pages');
 
 gulp.task('minify', function () {
   gulp.src('./js/*.js')
@@ -31,6 +33,11 @@ gulp.task('tests', function() {
       // En caso de fallar los tests, lanzar un error.
       throw err;
     });
+});
+
+gulp.task('deploy', function() {
+	return gulp.src('./minified/**/*')
+	.pipe(ghPages());
 });
 
 gulp.task('clean', function(cb) {
