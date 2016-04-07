@@ -4,7 +4,7 @@
   "description": "Prática de Procesadores de Lenguajes",
   "main": "main.js",
   "scripts": {
-    "test": "start tests/index.html"
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,13 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "*",
-    "mocha": "*"
-  }
+    "mocha": "*",
+    "karma": "~0.12",
+    "karma-chai": "^0.1.0",
+    "karma-firefox-launcher": "0.1.0",
+    "karma-mocha": "^0.2.2"
+  },
+  "plugins": [
+    "Karma-firefox-launcher"
+  ]
 }
