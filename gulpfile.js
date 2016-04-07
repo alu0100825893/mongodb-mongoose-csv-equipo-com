@@ -20,6 +20,19 @@ gulp.task('minify', function () {
    .pipe(gulp.dest('./minified/'))
 });
 
+gulp.task('tests', function() {
+  // Retornar el source
+  return gulp.src([])
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }))
+    .on('error', function(err) {
+      // En caso de fallar los tests, lanzar un error.
+      throw err;
+    });
+});
+
 gulp.task('clean', function(cb) {
   del(['minified/*'], cb);
 });
