@@ -44,6 +44,6 @@
   },
   "plugins": [
     "karma-firefox-launcher",
-    "karma-phantomjs-launcher",
+    "karma-phantomjs-launcher"
   ]
 }
