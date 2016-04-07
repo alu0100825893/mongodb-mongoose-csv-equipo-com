@@ -11,5 +11,5 @@ $(document).ready(function () {
   if (window.localStorage && localStorage.original) {
     original.value = localStorage.original;
   }
-  $("button").click(main);
+  $("#button").click(main);
 });
