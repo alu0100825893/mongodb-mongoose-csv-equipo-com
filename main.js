@@ -11,5 +11,17 @@ $(document).ready(function () {
   if (window.localStorage && localStorage.original) {
     original.value = localStorage.original;
   }
-  $("button").click(main);
+  $("#button").click(function() {
+    main();  
+    $('#andAnimation').toggleClass('animation1');
+    
+    $('#andAnimation').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+      function(e){
+      // do something here
+        setTimeout(function() {
+          $('#andAnimation').removeClass('animation1');
+        }, 500);
+        $(this).off(e);
+      });
+ });
 });
