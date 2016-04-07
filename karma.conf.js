@@ -8,7 +8,7 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-	plugins: [require("karma-mocha"), require("karma-chai"), require("karma-chrome-launcher")],
+	//plugins: [require("karma-mocha"), require("karma-chai"), require("karma-chrome-launcher")],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -17,7 +17,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'csv.js',      
+      'csv.js',
       'tests/*.js'
     ],
     // list of files to exclude
