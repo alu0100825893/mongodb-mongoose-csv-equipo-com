@@ -16,7 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'cvs.js',      
+      'csv.js',      
       'tests/*.js'
     ],
     // list of files to exclude
