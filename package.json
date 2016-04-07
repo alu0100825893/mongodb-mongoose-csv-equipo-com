@@ -28,15 +28,17 @@
     "url": "https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com/issues"
   },
   "homepage": "https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com#readme",
-  "dependencies": {},
+  "dependencies": {
+    "karma-mocha": "^0.2.2"
+  },
   "devDependencies": {
     "chai": "*",
-    "mocha": "*",
     "karma": "~0.12",
     "karma-chai": "^0.1.0",
     "karma-firefox-launcher": "0.1.0",
-    "karma-phantomjs-launcher": "^1.0.0",
     "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "*",
     "phantomjs-prebuilt": "^2.1.7"
   },
   "plugins": [

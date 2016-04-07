@@ -23,7 +23,7 @@ gulp.task('minify', function () {
 });
 
 gulp.task('tests', function() {
-  // Retornar el source
+  // Retornar el stream
   return gulp.src([])
     .pipe(karma({
       configFile: 'karma.conf.js',
