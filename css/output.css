@@ -9,7 +9,8 @@ div, table, th, td {
 
 body {
   background-color: black;
-  color: white; }
+  color: white;
+  font-family: Helvetica, sans-serif; }
 
 table, th, td {
   border: 1px solid green; }
