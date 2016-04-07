@@ -35,11 +35,11 @@ describe('CVS', function() {
     });
 
     it ('deberia analizar una entrada con campos vacios',function() {
-      this.original = "\"color\",\"numero\",\"objeto\"\n\"azul\",\"2\",  \n\"rojo\",\"  \",\"lápiz\"";
+      this.original = "\"color\",\"numero\",\"objeto\"\n\"azul\",\"2\",  \n\"rojo\", ,\"lápiz\"";
       var aux = calculate(this.original);
       expect(aux[0].value).to.deep.equal(['color','numero','objeto']);
       expect(aux[1].value).to.deep.equal(['azul','2','']);
-      expect(aux[2].value).to.deep.equal(['rojo','  ','lápiz']);
+      expect(aux[2].value).to.deep.equal(['rojo','','lápiz']);
     });
 
     it ('deberia analizar una entrada en la que las comillas son opcionales',function() {
