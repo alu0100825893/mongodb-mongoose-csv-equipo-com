@@ -16,8 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'cvs.js',
-      'main.js',
+      'cvs.js',      
       'tests/*.js'
     ],
     // list of files to exclude
@@ -56,7 +55,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox', 'PhantomJS', 'Chrome'],
+    browsers: ['Firefox', 'PhantomJS'],
 
 
     // Continuous Integration mode
