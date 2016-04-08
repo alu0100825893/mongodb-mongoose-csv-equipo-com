@@ -47,10 +47,6 @@
     "mocha": "*",
     "phantomjs-prebuilt": "^2.1.7"
   },
-<<<<<<< HEAD
-  "author": "",
-  "license": "ISC"
-=======
   "name": "localstorage-jquery-underscore-express-sass-heroku-equipo-com",
   "version": "1.0.0",
   "description": "Prática de Procesadores de Lenguajes",
@@ -95,10 +91,4 @@
   "plugins": [
     "karma-firefox-launcher"
   ]
->>>>>>> b405e251eefe8d9b4d3059998dce7912df8985b5
-=======
-  "plugins": [
-    "karma-firefox-launcher"
-  ]
->>>>>>> express
 }
