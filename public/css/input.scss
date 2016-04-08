@@ -1,0 +1,43 @@
+$font-stack:    Helvetica, sans-serif;
+$color-titulo: black;
+$color-fondo: black;
+$color-letra: white;
+$color-tabla: black;
+$borde-tabla: 1px;
+
+h1 {
+  color: $color-titulo;
+  text-align: center;
+}
+
+div {
+  margin-left:auto; margin-right:auto;
+  text-align: center;
+}
+
+body {
+  background-color: $color-fondo;
+  color: $color-letra;
+  font-family: $font-stack;
+}
+
+table , th, td {
+  @extend div;
+   border: $borde-tabla solid $color-tabla;
+}
+
+#finaltable:hover td {
+  background-color: green;
+}
+
+tr:nth-child(odd){
+  background-color:black;
+}
+
+tr:nth-child(even) {
+  background-color:blue;
+}
+
+tr.error       {
+  background-color: red;
+}

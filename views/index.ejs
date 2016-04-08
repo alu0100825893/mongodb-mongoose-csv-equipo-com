@@ -1,9 +1,35 @@
+    <!--<div>-->
+    <!--  <h1><%- title  %></h1>-->
+    <!--    <form action="/" method="post">-->
+    <!--       Enter your name:-->
+    <!--       <input type="text" name="userName" placeholder="..." autofocus />-->
+    <!--       <br/>-->
+    <!--       <button type="submit">Submit</button>-->
+    <!--    </form>-->
+    <!--</div>-->
+
+
+    <header>
+    <h1><%- title  %></h1>
+    </header>
+    <div id="andAnimation"></div>
     <div>
-      <h1><%- title  %></h1>
-        <form action="/" method="post">
-           Enter your name:
-           <input type="text" name="userName" placeholder="..." autofocus />
-           <br/>
-           <button type="submit">Submit</button>
-        </form>
+      <i>Write a CSV string. Click the table button. The program outputs a table with the specified data.</i>
+    </div>
+    <table>
+      <tr>
+        <th>CSV string:</th> <!-- autofocus attribute is HTML5 -->
+        <td><textarea autofocus cols = "80" rows = "5" id="original"></textarea></td>
+      </tr>
+    </table>
+    
+    <div style="text-align:center;">
+      
+    <div id="button" class="btn">Validate</div><br>
+    </div>
+
+    <span class="output" id="finaltable"></span>
+
+    <div style="text-align:center;">
+    <!--<img src="imagenes/cvs.png" alt="CVS" style="width:450px;height:350px">-->
     </div>

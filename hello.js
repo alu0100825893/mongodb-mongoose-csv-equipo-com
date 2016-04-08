@@ -13,11 +13,12 @@ var expressLayouts = require('express-ejs-layouts');
 app.set('layout', 'layout'); // defaults to 'layout'  '
 
 // Serve static files
-app.use(express.static('.')); // http://expressjs.com/api.html#app.use#
+app.use(express.static(__dirname + '/public'));
 app.use(expressLayouts);
 
 // Luego la consultamos con app.get('port')
-app.set('port', (process.env.PORT || 8080)); 
+
+app.set('port', (process.env.PORT || 5000)); 
 
 /*
  * body-parser is a piece of express middleware that 
@@ -39,7 +40,13 @@ app.get('/', function(req, res){
   // The form's action is '/' and its method is 'POST',
   // so the `app.post('/', ...` route will receive the
   // result of our form
-  res.render('index', { title: "form"});
+  res.sendfile(__dirname + '/public/index.html');
+});
+app.get('/tests', function(req, res){
+  // The form's action is '/' and its method is 'POST',
+  // so the `app.post('/', ...` route will receive the
+  // result of our form
+  res.sendfile(__dirname + '/public/test/index.html');
 });
 
 // This route receives the posted form.
