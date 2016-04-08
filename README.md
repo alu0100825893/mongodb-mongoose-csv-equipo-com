@@ -1,38 +1,36 @@
-## Introducción a ExpressJS
+<<<<<<< HEAD
+=======
+[![Build Status](https://travis-ci.org/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com.svg?branch=gh-pages)](https://travis-ci.org/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
 
-Estudie los siguientes tutoriales:
+#ETSII ULL Grado de Informatica
 
-* [Express pages/getting started: installing](http://expressjs.com/starter/installing.html)
-* [hello world example](http://expressjs.com/starter/hello-world.html)
-* [Use EJS to Template Your Node Application](https://scotch.io/tutorials/use-ejs-to-template-your-node-application)
-* [express-ejs-layouts: Layout support for ejs in express.](https://www.npmjs.com/package/express-ejs-layouts)
-* [Basic routing tutorial](http://expressjs.com/starter/basic-routing.html)
-* [Serving static files in Express](http://expressjs.com/starter/static-files.html)
-* [Curso MOOC Node.JS: Introducción a express.js y al middleware static](https://www.youtube.com/watch?v=Am6v7apaTkI&feature=youtu.be) YouTube
+* [Página en Github Carlos](https://ctc87.github.io/)
+* [Página en Github Oscar](https://alu0100825893.github.io/)
+* [Página en Github Miguel](https://alu0100886870.github.io/)
+* [Página de la asignatura PL Carlos](http://ctc87.github.io/Practicas_PL/)
+* [Página de la asignatura PL Oscar](https://alu0100825893.github.io/)
+* [Página de la asignatura PL Miguel](https://alu0100886870.github.io/pl.html)
+* [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
+* [Aplicación](http://alu0100825893.github.io/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
+* [Fork-Con los Issues](https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
+* [Test con encubrimiento](http://alu0100825893.github.io/localstorage-jquery-underscore-express-sass-heroku-equipo-com/tests/index.html)
 
-<!---
-* [Express pages/getting started: generator](http://expressjs.com/starter/generator.html)
--->
 
-## Ejecución de la aplicación de ejemplo
+# Práctica PL.
 
-* Haga un clone de este repo: [https://github.com/SYTW/hello-express](https://github.com/SYTW/hello-express)
+####Comma Separated Values
 
-                            git clone git@github.com:SYTW/hello-express.git
+* Use SASS para generar el CSS
+* Los templates deben hacerse usando Underscore y el truco del elemento script en el HTML
+* Se debe usar locaStorage para almacenar las últimas entradas
+* Añada pruebas usando Mocha y Chai
+* Use Karma para la ejecución de las tareas
+* Use Gulp para la gestión de las tareas
+* Haga un análisis de cubrimiento usando Blanket
+* Despliegue las pruebas en Travis
+* Despliegue la aplicación en Heroku usando Express.JS
 
-* Instala las dependencias con `npm install`
-* Arranca el servidor con `npm test`
-
-* Abre un navegador en [http://localhost:8080](http://localhost:8080) manualmente o bien con `npm run view`
-si estás en un mac
-
-* Estos son los shell scripts usados para las dos paso anteriores (fragmento de `package.json`):
-
-                              "scripts": {
-                                  "test": "node hello.js",
-                                  "view": "open http://localhost:8080/"
-                                },
-## Contexto
-
-* Este [repo en GitHub](https://github.com/SYTW/hello-express)
-* [Campus virtual](https://campusvirtual.ull.es/)
+##### Otros enlaces
+* Página de la asignatura (ULL): [Procesadores de Lenguaje](https://campusvirtual.ull.es/1516/course/view.php?id=178)
+* Página de la práctica (ULL): [Descripción de la práctica: Comma Separated Values](https://campusvirtual.ull.es/1516/mod/page/view.php?id=187374)
+>>>>>>> b405e251eefe8d9b4d3059998dce7912df8985b5
