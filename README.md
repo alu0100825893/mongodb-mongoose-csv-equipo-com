@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 [![Build Status](https://travis-ci.org/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com.svg?branch=gh-pages)](https://travis-ci.org/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
 
 #ETSII ULL Grado de Informatica
@@ -14,7 +12,7 @@
 * [Aplicación](http://alu0100825893.github.io/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
 * [Fork-Con los Issues](https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
 * [Test con encubrimiento](http://alu0100825893.github.io/localstorage-jquery-underscore-express-sass-heroku-equipo-com/tests/index.html)
-
+* [Despliegue en heroku](https://aqueous-bastion-58261.herokuapp.com/)
 
 # Práctica PL.
 
@@ -33,4 +31,4 @@
 ##### Otros enlaces
 * Página de la asignatura (ULL): [Procesadores de Lenguaje](https://campusvirtual.ull.es/1516/course/view.php?id=178)
 * Página de la práctica (ULL): [Descripción de la práctica: Comma Separated Values](https://campusvirtual.ull.es/1516/mod/page/view.php?id=187374)
->>>>>>> b405e251eefe8d9b4d3059998dce7912df8985b5
+
