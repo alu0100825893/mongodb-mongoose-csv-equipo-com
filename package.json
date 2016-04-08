@@ -2,7 +2,6 @@
   "name": "localstorage-jquery-underscore-express-sass-heroku-equipo-com",
   "version": "1.0.0",
   "description": "Prática de Procesadores de Lenguajes",
->>>>>>> express
   "main": "hello.js",
   "scripts": {
     "test": "karma start --single-run"
