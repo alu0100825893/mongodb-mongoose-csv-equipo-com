@@ -4,6 +4,7 @@
   "description": "Prática de Procesadores de Lenguajes",
   "main": "hello.js",
   "scripts": {
+    "start": "node hello.js",
     "test": "karma start --single-run"
   },
   "repository": {
