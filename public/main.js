@@ -12,9 +12,9 @@ $(document).ready(function () {
     original.value = localStorage.original;
   }
   $("#button").click(function() {
-    main();  
+    main();
     $('#andAnimation').toggleClass('animation1');
-    
+
     $('#andAnimation').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
       function(e){
       // do something here
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 function readSingleFile(evt) {
     //Recuperar el fichero (el primero, porque se podría una lista)
-    let f = evt.target.files[0]; 
+    let f = evt.target.files[0];
 
 	//Si se cargó el fichero, prepararse para leerlo
     if (f) {
@@ -43,7 +43,14 @@ function readSingleFile(evt) {
 	      $("#original").val(e.target.result);
       }
       r.readAsText(f);
-    } else { 
+    } else {
       alert("No se ha cargado ningún archivo");
     }
 }
+
+//Funcion para cargar un archivo de ejemplo en la tabla
+dump = function(fileName) {
+    $.get(fileName, function (data) {
+        $("#original").val(data);
+    });
+};
