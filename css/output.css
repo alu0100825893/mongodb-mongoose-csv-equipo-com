@@ -1,0 +1,30 @@
+h1 {
+  color: black;
+  text-align: center; }
+
+div, table, th, td {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Helvetica, sans-serif; }
+
+table, th, td {
+  border: 1px solid black; }
+
+#finaltable:hover td {
+  background-color: green; }
+
+tr:nth-child(odd) {
+  background-color: black; }
+
+tr:nth-child(even) {
+  background-color: blue; }
+
+tr.error {
+  background-color: red; }
+
+/*# sourceMappingURL=output.css.map */

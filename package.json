@@ -1,0 +1,46 @@
+{
+  "name": "localstorage-jquery-underscore-express-sass-heroku-equipo-com",
+  "version": "1.0.0",
+  "description": "Prática de Procesadores de Lenguajes",
+  "main": "main.js",
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com.git"
+  },
+  "author": {
+    "name": "Carlos Troyano Carmona"
+  },
+  "contributors": [
+    {
+      "name": "Oscar Catari Gutierrez",
+      "email": "alu0100825893@ull.edu.es"
+    },
+    {
+      "name": "Miguel Castro Caraballo",
+      "email": "alu0100886870@ull.edu.es"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com/issues"
+  },
+  "homepage": "https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "*",
+    "karma": "~0.12",
+    "karma-chai": "^0.1.0",
+    "karma-firefox-launcher": "0.1.0",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",  
+    "mocha": "*",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "plugins": [
+    "karma-firefox-launcher"
+  ]
+}
