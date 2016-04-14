@@ -25,3 +25,25 @@ $(document).ready(function () {
       });
  });
 });
+
+/**
+*	Función que lee el archivo indicado en el fileInput
+*/
+
+function readSingleFile(evt) {
+    //Recuperar el fichero (el primero, porque se podría una lista)
+    let f = evt.target.files[0]; 
+
+	//Si se cargó el fichero, prepararse para leerlo
+    if (f) {
+      let r = new FileReader();
+      r.onload = function(e) {
+		  //Una vez cargado, sustituir el contenido el textarea
+		  $("#original").val('');
+	      $("#original").val(e.target.result);
+      }
+      r.readAsText(f);
+    } else { 
+      alert("No se ha cargado ningún archivo");
+    }
+}
