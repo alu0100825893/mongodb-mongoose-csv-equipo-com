@@ -27,4 +27,9 @@ tr:nth-child(even) {
 tr.error {
   background-color: red; }
 
+.filestyle {
+  background-color: navy;
+  text-align: left;
+}
+
 /*# sourceMappingURL=output.css.map */

@@ -10,7 +10,7 @@
      <script type="text/javascript" src="csv.js"></script>
      <script type="text/javascript" src="main.js"></script>
      <script type="text/html" id='fillTable'>
-     
+
        <table id="result" class="center">
          <% _.each(items, function(name) { %>
            <tr class="<%= name.rowClass %>">
@@ -35,11 +35,23 @@
         <th>CSV string:</th> <!-- autofocus attribute is HTML5 -->
         <td><textarea autofocus cols = "80" rows = "5" id="original"></textarea></td>
       </tr>
+	  <tr>
+		<td colspan="2" class="filestyle">Cargar archivo: <input type="file" id="fileInput"/></td>
+	  </tr>
+
+    <tr>
+      <td class="filestyle">
+      Click para cargar ejemplos:
+      <button id ="input1" type="button" onclick="dump('input.txt');">Input1</button>
+      <button id ="input2" type="button" onclick="dump('input2.txt');">Input2</button>
+      <button id ="input3" type="button" onclick="dump('input3.txt');">Input3</button>
+      <button id ="input4" type="button" onclick="dump('input4.txt');">Input4</button>
+      </td>
+    </tr>
     </table>
-    
     <div style="text-align:center;">
-      
     <div id="button" class="btn">Validate</div><br>
+
     </div>
 
     <span class="output" id="finaltable"></span>
@@ -47,5 +59,10 @@
     <div style="text-align:center;">
     <!--<img src="imagenes/cvs.png" alt="CVS" style="width:450px;height:350px">-->
     </div>
+
+<script>
+	document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
+</script>
+
   </body>
 </html>
