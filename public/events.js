@@ -33,6 +33,14 @@ const resultTemplate = `
     }
     
     const dump = (fileName) => {
+            $('#andAnimation').toggleClass('animation1');
+            $('#andAnimation').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+                function(e){
+                    setTimeout(function() {
+                        $('#andAnimation').removeClass('animation1');
+                    }, 500);
+                $(this).off(e);
+            });
         var reader = new FileReader();
         reader.onload = function(e) { 
             console.log(e.target)
@@ -42,11 +50,23 @@ const resultTemplate = `
         var c = reader.readAsText(fileName);
     };
     
+  
+  function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+    if(evt.type == "dragover")
+        evt.target.style.background = "green";
+    else
+        evt.target.style.background = "blue";
+        
+  }
+    
     const handleFileSelect = (evt) => {
         evt.stopPropagation();
         evt.preventDefault();
-        let files = evt.currentTarget.files; // FileList object.
-        evt.target.style.background = "green";
+        let files = evt.currentTarget.files || evt.dataTransfer.files; // FileList object.
+        evt.target.style.background = "none";
     
     
         // files is a FileList of File objects. List some properties.
@@ -78,20 +98,15 @@ const resultTemplate = `
         //  let inputFile = 
         $('#files').change(handleFileSelect);
         $('#button').click(() => {
-            $('#andAnimation').toggleClass('animation1');
-            $('#andAnimation').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-                function(e){
-                    setTimeout(function() {
-                        $('#andAnimation').removeClass('animation1');
-                    }, 500);
-                $(this).off(e);
-            });
             var original = document.getElementById("original").value;
             if (window.localStorage) 
                 localStorage.original = original;
             ajaxRequest(original);
             
         })
+        var dropZone = document.getElementById('drop_zone');
+        dropZone.addEventListener('dragover', handleDragOver, false);
+        dropZone.addEventListener('drop', handleFileSelect, false);
     }
     });
 

@@ -30,6 +30,27 @@ header {
     border-top: solid 5px black;
 }
 
+#drop_zone {
+  position:relative;
+  float: left;
+  /*margin-right:10%;*/
+  /*margin-top:2%;*/
+  width:10%;
+  height:100px;
+  border: 2px dashed white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  font: 20pt bold 'Vollkorn';
+  color: white;
+  transition:All 1s ease;
+  -webkit-transition:All 1s ease;
+  -moz-transition:All 1s ease;
+  -o-transition:All 1s ease;
+}
+
 body {
     background-image: url("../imagenes/backgrounds/lego.jpg");
     background-repeat: repeat;
