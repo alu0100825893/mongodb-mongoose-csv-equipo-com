@@ -27,7 +27,7 @@ table , th, td {
 }
 
 #finaltable:hover td {
-  background-color: green;
+  background-color: yellow;
 }
 
 tr:nth-child(odd){
@@ -35,7 +35,7 @@ tr:nth-child(odd){
 }
 
 tr:nth-child(even) {
-  background-color:blue;
+  background-color:red;
 }
 
 tr.error       {

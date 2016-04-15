@@ -12,6 +12,10 @@ body {
   color: white;
   font-family: Helvetica, sans-serif; }
 
+table {
+  width: 50%
+}
+
 table, th, td {
   border: 1px solid black; }
 

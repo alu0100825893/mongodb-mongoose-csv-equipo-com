@@ -46,6 +46,7 @@
     "karma-mocha": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "mocha": "*",
+    "node-sass-middleware": "^0.9.8",
     "phantomjs-prebuilt": "^2.1.7",
     "router": "^1.1.4"
   },
