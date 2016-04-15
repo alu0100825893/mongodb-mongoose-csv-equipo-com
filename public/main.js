@@ -1,9 +1,9 @@
 main = function() {
   var original = document.getElementById("original").value;
   if (window.localStorage) localStorage.original = original;
-  var r = calculate(original);
-  var template = fillTable.innerHTML;
-  finaltable.innerHTML = _.template(template, {items: r});
+  // var r = calculate(original);
+  // var template = fillTable.innerHTML;
+  // finaltable.innerHTML = _.template(template, {items: r});
 };
 
 $(document).ready(function () {
