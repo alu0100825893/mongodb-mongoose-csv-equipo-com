@@ -17,19 +17,19 @@
 
 # Práctica PL.
 
-####Comma Separated Values
+#### Comma Separated Values with AJAX
+[Descripción de la práctica en el CV](https://campusvirtual.ull.es/1516/mod/page/view.php?id=189369)
+<br/>[Página de la asignatura en el CV](https://campusvirtual.ull.es/1516/course/view.php?id=178)
 
-* Use SASS para generar el CSS
-* Los templates deben hacerse usando Underscore y el truco del elemento script en el HTML
-* Se debe usar locaStorage para almacenar las últimas entradas
-* Añada pruebas usando Mocha y Chai
-* Use Karma para la ejecución de las tareas
-* Use Gulp para la gestión de las tareas
-* Haga un análisis de cubrimiento usando Blanket
-* Despliegue las pruebas en Travis
-* Despliegue la aplicación en Heroku usando Express.JS
+<b>A los requesitos de la práctica anterior se le añaden:</b>
 
-##### Otros enlaces
-* Página de la asignatura (ULL): [Procesadores de Lenguaje](https://campusvirtual.ull.es/1516/course/view.php?id=178)
-* Página de la práctica (ULL): [Descripción de la práctica: Comma Separated Values](https://campusvirtual.ull.es/1516/mod/page/view.php?id=187374)
+* El requisito de practicar un request AJAX usando jQuery.
+* Aislar el cálculo de la tabla en un módulo Node.js
+* El volcado de la salida en el cliente debe hacerse usando underscore evitando concatenación de cadenas
+* Utilice tantas características de ECMA6 como le sea posible.
+* Añadir  botones/enlaces/menu de selección que permitan cargar un fichero específico de una lista de ficheros en la texarea de entrada.
+* Añada una zona de Drag-and-Drop a la que se pueda arrastrar el fichero a analizar.
+* Añada un botón de lectura de fichero <input type="file" /> para cargar la entrada desde fichero.
 
+# ENLACE A HEROKU
+##### [DESPLIEGUE EN HEROKU](https://ajaxcsv1.herokuapp.com/)
