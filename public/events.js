@@ -1,5 +1,5 @@
 (() => {
-// "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 const resultTemplate = `
 <div class="contenido">
    <table id="result" class="center">

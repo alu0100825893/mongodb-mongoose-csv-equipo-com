@@ -1,10 +1,5 @@
-main = function() {
-  var original = document.getElementById("original").value;
-  if (window.localStorage) localStorage.original = original;
-  // var r = calculate(original);
-  // var template = fillTable.innerHTML;
-  // finaltable.innerHTML = _.template(template, {items: r});
-};
+
+  "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 $(document).ready(function () {
   // If the browser supports localStorage and we have some stored data
@@ -12,7 +7,7 @@ $(document).ready(function () {
     original.value = localStorage.original;
   }
   $("#button").click(function() {
-    main();
+    // main();
     $('#andAnimation').toggleClass('animation1');
 
     $('#andAnimation').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
@@ -23,12 +18,21 @@ $(document).ready(function () {
         }, 500);
         $(this).off(e);
       });
- });
+});
 });
 
-/**
-*	Función que lee el archivo indicado en el fileInput
-*/
+// /**
+// *	Función que lee el archivo indicado en el fileInput
+// */
+
+// var main = function() {
+//   var original = document.getElementById("original").value;
+//   if (window.localStorage) localStorage.original = original;
+//   // var r = calculate(original);
+//   // var template = fillTable.innerHTML;
+//   // finaltable.innerHTML = _.template(template, {items: r});
+// };
+
 
 function readSingleFile(evt) {
     //Recuperar el fichero (el primero, porque se podría una lista)
@@ -49,7 +53,7 @@ function readSingleFile(evt) {
 }
 
 //Funcion para cargar un archivo de ejemplo en la tabla
-dump = function(fileName) {
+var dump = function(fileName) {
     $.get(fileName, function (data) {
         $("#original").val(data);
     });
