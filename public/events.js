@@ -117,6 +117,7 @@ const resultTemplate = `
         $('#files').change(handleFileSelect);
         // document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
         $('#button').click(() => {
+            console.log("clik")
             var original = document.getElementById("original").value;
             if (window.localStorage)
                 localStorage.original = original;
