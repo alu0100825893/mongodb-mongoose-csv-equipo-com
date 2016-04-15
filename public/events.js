@@ -90,23 +90,23 @@ const resultTemplate = `
         list.insertBefore(ulnode,list.childNodes[2]);
   }
 
-    const readSingleFile = (evt) => {
-        //Recuperar el fichero (el primero, porque se podría una lista)
-        let f = evt.target.files[0];
+    // const readSingleFile = (evt) => {
+    //     //Recuperar el fichero (el primero, porque se podría una lista)
+    //     let f = evt.target.files[0];
 
-    	//Si se cargó el fichero, prepararse para leerlo
-        if (f) {
-          let r = new FileReader();
-          r.onload = function(e) {
-    		  //Una vez cargado, sustituir el contenido el textarea
-    		  $("#original").val('');
-    	      $("#original").val(e.target.result);
-          }
-          r.readAsText(f);
-        } else {
-          alert("No se ha cargado ningún archivo");
-        }
-    }
+    // 	//Si se cargó el fichero, prepararse para leerlo
+    //     if (f) {
+    //       let r = new FileReader();
+    //       r.onload = function(e) {
+    // 		  //Una vez cargado, sustituir el contenido el textarea
+    // 		  $("#original").val('');
+    // 	      $("#original").val(e.target.result);
+    //       }
+    //       r.readAsText(f);
+    //     } else {
+    //       alert("No se ha cargado ningún archivo");
+    //     }
+    // }
 
 
     $(document).ready(() => {
@@ -115,7 +115,7 @@ const resultTemplate = `
             original.value = localStorage.original;
         //  let inputFile =
         $('#files').change(handleFileSelect);
-        document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
+        // document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
         $('#button').click(() => {
             var original = document.getElementById("original").value;
             if (window.localStorage)
