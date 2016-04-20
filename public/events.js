@@ -89,6 +89,8 @@ const resultTemplate = `
         var list=document.getElementById("list");
         list.insertBefore(ulnode,list.childNodes[2]);
   }
+  
+ 
 
     // const readSingleFile = (evt) => {
     //     //Recuperar el fichero (el primero, porque se podría una lista)
