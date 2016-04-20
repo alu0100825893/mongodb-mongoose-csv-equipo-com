@@ -8,6 +8,14 @@ var mongoose = require('mongoose');
 //Conectando a una base de datos 
 mongoose.connect('mongodb://localhost/baseDatos')
 
+//Elementos de la base de datos
+var CsvSchema = mongoose.Schema({
+        "nombre" : String,
+        "contenido" : String
+    });
+    
+var Csv = mongoose.model("Csv", CsvSchema);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 // set the view engine to ejs
@@ -51,7 +59,21 @@ app.get('/calculate', function (req, res){
 
 });
 
-
+app.get('/mongo/save', function (req, res){
+    //console.log(req.query.contenido);
+    
+    var csvTemp = new Csv({
+        "nombre": req.query.nombre,
+        "contenido": req.query.contenido
+    });
+    //console.log(req.params);
+    csvTemp.save(function (err) {
+      if (err) return -1;
+      console.log("guardado");
+    });
+    
+    
+});
 
 // app.get('/', function(req, res){
 //   // The form's action is '/' and its method is 'POST',
@@ -70,16 +92,3 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
 
-var CardSchema = mongoose.Schema({ 
-        "rank" : String,
-        "suit" : String
-});
-
-var Card = mongoose.model("Card", CardSchema);
-
-var c1 = new Card({"rank":"ace", "suit":"spades"});
-
-c1.save(function (err) {
-  if (err) return -1;
-  // saved!
-});

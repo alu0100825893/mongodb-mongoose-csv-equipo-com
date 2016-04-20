@@ -9,18 +9,18 @@
       <tr>
         <th>CSV string:</th> <!-- autofocus attribute is HTML5 -->
         <td><textarea autofocus cols = "80" rows = "5" id="original"></textarea></td>
-  <div id="drop_zone">Drop files here</div>
+        <div id="drop_zone">Drop files here</div>
       </tr>
 
       <tr>
   		  <td colspan="5" class="filestyle">Cargar archivo: 
           <input type="file" id="files" name="files[]" multiple />
           
-    <div style="text-align:center;">
-    <output id="list"></output>
-    <br/>
-    <!--<img src="imagenes/cvs.png" alt="CVS" style="width:450px;height:350px">-->
-    </div>
+        <div style="text-align:center;">
+        <output id="list"></output>
+        <br/>
+        <!--<img src="imagenes/cvs.png" alt="CVS" style="width:450px;height:350px">-->
+        </div>
         </td>
   	  </tr>
 
@@ -33,6 +33,12 @@
         <button id ="input4" type="button" onclick="dump('input4.txt');">Input4</button>
         </td>
       </tr>
+      
+      <tr>
+        <td class="filestyle">
+          <button id ="buttonSave" type="button">Guardar entrada</button>
+        </td>
+      <tr>
     </table>
 
     <div style="text-align:center;">

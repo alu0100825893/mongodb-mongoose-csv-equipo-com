@@ -31,6 +31,16 @@ const resultTemplate = `
            }
         })
     }
+    
+    const ajaxRequestSave = (input)  => {
+        var nombr = prompt("Escribe un nombre");
+        $.ajax({
+           url: '/mongo/save',
+           type: 'GET',
+           data: {nombre: nombr , contenido: input.value}
+        });
+        //$.get( "/mongo/save", { contenido: original } );
+    }
 
     const dump = (fileName) => {
             $('#andAnimation').toggleClass('animation1');
@@ -117,6 +127,10 @@ const resultTemplate = `
             original.value = localStorage.original;
         //  let inputFile =
         $('#files').change(handleFileSelect);
+        $('#buttonSave').click(() => {
+            ajaxRequestSave(original);
+        })
+            
         // document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
         $('#button').click(() => {
             var original = document.getElementById("original").value;
