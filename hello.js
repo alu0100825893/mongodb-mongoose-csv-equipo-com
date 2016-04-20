@@ -3,8 +3,10 @@ var csv = require('./csv');
 var app = express()
 // https://nodejs.org/api/path.html
 var path = require("path")
+var mongoose = require('mongoose');
 
-
+//Conectando a una base de datos 
+mongoose.connect('mongodb://localhost/baseDatos')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -68,3 +70,16 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
 
+var CardSchema = mongoose.Schema({ 
+        "rank" : String,
+        "suit" : String
+});
+
+var Card = mongoose.model("Card", CardSchema);
+
+var c1 = new Card({"rank":"ace", "suit":"spades"});
+
+c1.save(function (err) {
+  if (err) return -1;
+  // saved!
+});

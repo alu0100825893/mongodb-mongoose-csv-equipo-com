@@ -16,7 +16,7 @@ const resultTemplate = `
 `;
 
     const ajaxRequest = (input)  => {
-        console.log(input);
+        //console.log(input);
         $.ajax({
            url: '/calculate',
            type: 'GET',
@@ -112,7 +112,7 @@ const resultTemplate = `
 
 
     $(document).ready(() => {
-        console.log(resultTemplate)
+        //console.log(resultTemplate)
         if (window.localStorage && localStorage.original) {
             original.value = localStorage.original;
         //  let inputFile =
