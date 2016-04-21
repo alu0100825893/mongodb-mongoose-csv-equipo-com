@@ -3,7 +3,7 @@ var csv = require('./csv');
 var app = express()
 // https://nodejs.org/api/path.html
 var path = require("path");
-var database = require("./database.js");    // Para conectar con la BD
+var database = require("database");    // Para conectar con la BD
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
