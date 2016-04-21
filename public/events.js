@@ -15,6 +15,15 @@ const resultTemplate = `
 </div>
 `;
 
+// `
+// <div>
+//      <% _.each(name.value, function(cell) { %>
+//       <td><%= cell %></td>
+//      <% }); %>
+// <div>
+// `
+
+
     const ajaxRequest = (input)  => {
         //console.log(input);
         $.ajax({
@@ -31,6 +40,20 @@ const resultTemplate = `
            }
         })
     }
+
+    // const ajaxRequestBD = ()  => {
+    //     $.ajax({
+    //       url: '/',
+    //       type: 'GET',
+    //       cache: false,
+    //       success: function(data){
+    //             console.log(data)
+    //       }
+    //       , error: function(jqXHR, textStatus, err){
+    //           alert('text status '+textStatus+', err '+err)
+    //       }
+    //     })
+    // }
     
     const ajaxRequestSave = (input)  => {
         var nombr = prompt("Escribe un nombre");
@@ -122,10 +145,12 @@ const resultTemplate = `
 
 
     $(document).ready(() => {
+        // ajaxRequestBD();
         //console.log(resultTemplate)
         if (window.localStorage && localStorage.original) {
             original.value = localStorage.original;
-        //  let inputFile =
+        }
+        
         $('#files').change(handleFileSelect);
         $('#buttonSave').click(() => {
             ajaxRequestSave(original);
@@ -142,7 +167,6 @@ const resultTemplate = `
         var dropZone = document.getElementById('drop_zone');
         dropZone.addEventListener('dragover', handleDragOver, false);
         dropZone.addEventListener('drop', handleFileSelect, false);
-    }
     });
 
 })();
