@@ -3,36 +3,7 @@ var csv = require('./csv');
 var app = express()
 // https://nodejs.org/api/path.html
 var path = require("path")
-var mongoose = require('mongoose');
-
-//Conectando a una base de datos 
-mongoose.connect('mongodb://localhost/baseDatos');
-
-//Elementos de la base de datos
-var CsvSchema = mongoose.Schema({
-        "nombre" : String,
-        "contenido" : String,
-        "numeroRegistro" : Number
-});
-
-var IndicadorSchema = mongoose.Schema({
-        "registro" : { type: Number, required: true, min: 1, max: 4 }
-});
-
-var Csv = mongoose.model("Csv", CsvSchema);
-var Indicador = mongoose.model("Indicador", IndicadorSchema);
-
-var indicador = new Indicador({
-        "registro": 1
-});
-
-indicador.save(function (err) {
-      if (err) console.log("Algo ha ido mal en el guardado");
-}).then( (value) => {
-    mongoose.connection.close();
-    console.log("Terminada inicializacion de baseDatos");  
-});
-
+var database = require("./database.js");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -79,17 +50,13 @@ app.get('/calculate', function (req, res){
 
 app.get('/mongo/save', function (req, res){
     //console.log(req.query.contenido);
-    mongoose.connect('mongodb://localhost/baseDatos');
-    
-    //var query = indicador.findOne({});
-    //query.select('registro);
-    console.log(indicador.registro);
+    database.mongoose.connect('mongodb://localhost/baseDatos');
     
     
-    var csvTemp = new Csv({
+    var csvTemp = new database.Csv({
         "nombre": req.query.nombre,
         "contenido": req.query.contenido,
-        "numeroRegistro" : indicador.registro
+        "numeroRegistro" : 1
     });
     //console.log(req.params);
     var p1 = csvTemp.save(function (err) {
@@ -97,10 +64,9 @@ app.get('/mongo/save', function (req, res){
     });
     
     p1.then( (value) => {
-        indicador.update( {registro: indicador.registro++ })
         //console.log(value);
         console.log("Guardado: " + value.nombre);
-        mongoose.connection.close();
+        database.mongoose.connection.close();
     });
         
         
