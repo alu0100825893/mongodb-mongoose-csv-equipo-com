@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express')
 var csv = require('./csv');
 var app = express()
@@ -78,28 +80,62 @@ app.get('/calculate', function (req, res){
 app.get('/mongo/save', function (req, res){
     mongoose.connect('mongodb://localhost/baseDatos');
     
-    var numEntradas;
+    let numEntradas;
+    let numReg;
+    let elementoAct;
+    
     Csv.find({}, function (err, finded) {
         numEntradas = finded.length;
-    });
-    
-    var csvTemp = new Csv({
-        "nombre": req.query.nombre,
-        "contenido": req.query.contenido,
-        "numeroRegistro" : 1,
-        "elementoActual" : false
-    });
-    
-    var p1 = csvTemp.save(function (err) {
-      if (err) console.log("Algo ha ido mal en el guardado");
-    });
-    
-    p1.then( (value) => {
-        console.log("Guardado: " + value.nombre);
-        mongoose.connection.close();
-    });
-    
-    
+        console.log(numEntradas);
+    }).then( (value) => {
+        if(numEntradas < 4) {
+            //Se pueden crear registros
+            numReg = numEntradas + 1;
+            if (numEntradas == 0) {
+                elementoAct = true;
+            }
+            else {
+                elementoAct = false;
+            }
+            
+            let csvTemp = new Csv({
+                "nombre": req.query.nombre,
+                "contenido": req.query.contenido,
+                "numeroRegistro" : numReg,
+                "elementoActual" : elementoAct
+            });
+            
+            let p1 = csvTemp.save(function (err) { 
+              if (err) console.log("Algo ha ido mal en el guardado");
+            });
+            
+            p1.then( (value) => {
+                console.log("Guardado: " + value.nombre);
+                mongoose.connection.close();
+            });
+            
+        }
+        else {
+            //Se reutilizan registros
+            console.log("reutilizando reg");
+            
+            Csv.find({elementoActual : true}, function (err, finded) {
+                numReg = finded[0].numeroRegistro;
+            }).then( (value) => {
+                let siguiente = (numReg + 1) % 4;
+                if (siguiente == 0) siguiente = 4;
+                //Actualizando registro actual y el siguiente
+                Csv.update({numeroRegistro : siguiente},{elementoActual : true}, () => {
+                    Csv.update({numeroRegistro : numReg},
+                        {nombre: req.query.nombre, contenido : req.query.contenido, elementoActual : false},
+                        () => {
+                            mongoose.connection.close();
+                        })
+                })
+            })
+            
+        }
+    })
     
 });
 
