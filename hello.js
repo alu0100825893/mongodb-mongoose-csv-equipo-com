@@ -2,21 +2,21 @@ var express = require('express')
 var csv = require('./csv');
 var app = express()
 // https://nodejs.org/api/path.html
-var path = require("path")
-var database = require("./database.js");
+var path = require("path");
+var database = require("./database.js");    // Para conectar con la BD
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 // set the view engine to ejs
 app.set('view engine', 'ejs'); // http://expressjs.com/api.html#app.set
 
+//Iniciamos la base de datos
+database.iniciar();
 
 // Serve static files
 app.use(express.static(__dirname + '/public'));
 
-
 // Luego la consultamos con app.get('port')
-
 app.set('port', (process.env.PORT || 5000)); 
 
 /*
