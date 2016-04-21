@@ -6,15 +6,33 @@ var path = require("path")
 var mongoose = require('mongoose');
 
 //Conectando a una base de datos 
-mongoose.connect('mongodb://localhost/baseDatos')
+mongoose.connect('mongodb://localhost/baseDatos');
 
 //Elementos de la base de datos
 var CsvSchema = mongoose.Schema({
         "nombre" : String,
-        "contenido" : String
-    });
-    
+        "contenido" : String,
+        "numeroRegistro" : Number
+});
+
+var IndicadorSchema = mongoose.Schema({
+        "registro" : { type: Number, required: true, min: 1, max: 4 }
+});
+
 var Csv = mongoose.model("Csv", CsvSchema);
+var Indicador = mongoose.model("Indicador", IndicadorSchema);
+
+var indicador = new Indicador({
+        "registro": 1
+});
+
+indicador.save(function (err) {
+      if (err) console.log("Algo ha ido mal en el guardado");
+}).then( (value) => {
+    mongoose.connection.close();
+    console.log("Terminada inicializacion de baseDatos");  
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -61,17 +79,31 @@ app.get('/calculate', function (req, res){
 
 app.get('/mongo/save', function (req, res){
     //console.log(req.query.contenido);
+    mongoose.connect('mongodb://localhost/baseDatos');
+    
+    //var query = indicador.findOne({});
+    //query.select('registro);
+    console.log(indicador.registro);
+    
     
     var csvTemp = new Csv({
         "nombre": req.query.nombre,
-        "contenido": req.query.contenido
+        "contenido": req.query.contenido,
+        "numeroRegistro" : indicador.registro
     });
     //console.log(req.params);
-    csvTemp.save(function (err) {
-      if (err) return -1;
-      console.log("guardado");
+    var p1 = csvTemp.save(function (err) {
+      if (err) console.log("Algo ha ido mal en el guardado");
     });
     
+    p1.then( (value) => {
+        indicador.update( {registro: indicador.registro++ })
+        //console.log(value);
+        console.log("Guardado: " + value.nombre);
+        mongoose.connection.close();
+    });
+        
+        
     
 });
 
