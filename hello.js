@@ -102,8 +102,8 @@ app.get('/mongo/save', function (req, res){
         console.log("Guardado: " + value.nombre);
         mongoose.connection.close();
     });
-        
-        
+    
+    
     
 });
 
@@ -123,4 +123,3 @@ app.get('/mongo/save', function (req, res){
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
-
