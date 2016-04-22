@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com.svg?branch=gh-pages)](https://travis-ci.org/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
 
-#ETSII ULL Grado de Informatica
+# ETSII ULL Grado de Informatica
 
 * [Página en Github Carlos](https://ctc87.github.io/)
 * [Página en Github Oscar](https://alu0100825893.github.io/)
@@ -8,27 +8,26 @@
 * [Página de la asignatura PL Carlos](http://ctc87.github.io/Practicas_PL/)
 * [Página de la asignatura PL Oscar](https://alu0100825893.github.io/)
 * [Página de la asignatura PL Miguel](https://alu0100886870.github.io/pl.html)
-* [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
-* [Aplicación](http://alu0100825893.github.io/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
-* [Fork-Con los Issues](https://github.com/alu0100825893/localstorage-jquery-underscore-express-sass-heroku-equipo-com)
-* [Test con encubrimiento](http://alu0100825893.github.io/localstorage-jquery-underscore-express-sass-heroku-equipo-com/tests/index.html)
-* [DESPLIEGUE EN HEROKU](https://ajaxcsv1.herokuapp.com/)
+* [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/mongodb-mongoose-csv-equipo-com)
+* [Fork-Con los Issues](https://github.com/alu0100825893/mongodb-mongoose-csv-equipo-com)
+* [DESPLIEGUE EN C9](https://ide.c9.io/alu0100825893/ubuntu)
 
 # Práctica PL.
 
-#### Comma Separated Values with AJAX
-[Descripción de la práctica en el CV](https://campusvirtual.ull.es/1516/mod/page/view.php?id=189369)
+#### CSV usando MongoDB
+[Descripción de la práctica en el CV](https://campusvirtual.ull.es/1516/mod/page/view.php?id=191191)
 <br/>[Página de la asignatura en el CV](https://campusvirtual.ull.es/1516/course/view.php?id=178)
 
 <b>A los requesitos de la práctica anterior se le añaden:</b>
 
-* El requisito de practicar un request AJAX usando jQuery.
-* Aislar el cálculo de la tabla en un módulo Node.js
-* El volcado de la salida en el cliente debe hacerse usando underscore evitando concatenación de cadenas
-* Utilice tantas características de ECMA6 como le sea posible.
-* Añadir  botones/enlaces/menu de selección que permitan cargar un fichero específico de una lista de ficheros en la texarea de entrada.
-* Añada una zona de Drag-and-Drop a la que se pueda arrastrar el fichero a analizar.
-* Añada un botón de lectura de fichero <input type="file" /> para cargar la entrada desde fichero.
+* Un botón guardar. Cuando se hace click en dicho botón se guarda la entrada actual en una base de datos MongoDB.
+ * El contenido de la entrada actual se guarda con un nombre que se solicita previamente al usuario
+ * Usaremos Mongoose para acceder a la base de datos
+* Sólo se guardan hasta un límite de cuatro ejemplos en la Base de Datos. Cuando el número excede del límite se borra uno de los anteriores y se guarda la nueva entrada
+* Al igual que en la práctica CSV usando Ajax habrán botones de selección de ejemplo.
+ * Pondremos tantos botones como registros hay en la Base de Datos.
+ * Al hacer click en uno de estos botones se carga el ejemplo con ese nombre desde la base de datos en la textarea de entrada
+* Despliegue su aplicación en c9.io. En los enlaces de entrega (README.md y taller) especifique la URL de c9.io
 
-# ENLACE A HEROKU
-##### [DESPLIEGUE EN HEROKU](https://ajaxcsv1.herokuapp.com/)
+# ENLACE A LA APLICACIÓN EN C9
+##### [ENLACE A C9.io](https://ide.c9.io/alu0100825893/ubuntu)
