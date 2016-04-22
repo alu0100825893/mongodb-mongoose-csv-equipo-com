@@ -4,6 +4,9 @@ $color-fondo: black;
 $color-letra: white;
 $color-tabla: black;
 $borde-tabla: 1px;
+$padding-tabla: 0px;
+$spacing-tabla: 0px;
+$padding-filestyle: 5px;
 
 h1 {
   color: $color-titulo;
@@ -24,6 +27,14 @@ body {
 table , th, td {
   @extend div;
    border: $borde-tabla solid $color-tabla;
+   padding: $padding-tabla;
+   border-spacing: $spacing-tabla;
+}
+
+.filestyle {
+  background-color:#204070;
+  text-align: left;
+  padding: $padding-filestyle;
 }
 
 #finaltable:hover td {
