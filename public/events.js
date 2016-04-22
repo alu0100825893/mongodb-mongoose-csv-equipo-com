@@ -31,7 +31,7 @@ const resultTemplate = `
            type: 'GET',
            cache: false,
            data: {csvString: input},
-           success: function(data){
+           success: function(data) {
                 var parsedTemplate = _.template(resultTemplate,{items: data });
                 $("#finaltable").html(parsedTemplate);
            }
@@ -41,20 +41,21 @@ const resultTemplate = `
         })
     }
 
-    // const ajaxRequestBD = ()  => {
-    //     $.ajax({
-    //       url: '/',
-    //       type: 'GET',
-    //       cache: false,
-    //       success: function(data){
-    //             console.log(data)
-    //       }
-    //       , error: function(jqXHR, textStatus, err){
-    //           alert('text status '+textStatus+', err '+err)
-    //       }
-    //     })
-    // }
-    
+    const ajaxRequestBDGet = (idBoton)  => {
+            //console.log(input);
+            $.ajax({
+               url: '/mongo/queryBoton',
+               type: 'GET',
+               cache: false,
+               data: {botonId: idBoton},
+               success: function(data){
+                   $('#original').val(data);
+               }
+               , error: function(jqXHR, textStatus, err){
+                   alert('text status '+textStatus+', err '+err)
+               }
+            })
+        }
     const ajaxRequestSave = (input)  => {
         var nombr = prompt("Escribe un nombre");
         $.ajax({
@@ -155,6 +156,12 @@ const resultTemplate = `
         $('#buttonSave').click(() => {
             ajaxRequestSave(original);
         })
+        
+        $('.botonQuery').click((event) => {
+            console.log(event.toElement.id.toString())
+            ajaxRequestBDGet(event.toElement.id.toString());
+        })
+            
             
         // document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
         $('#button').click(() => {
