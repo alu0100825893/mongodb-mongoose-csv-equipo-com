@@ -43,5 +43,5 @@
 ##### [ENLACE A C9.io](https://ide.c9.io/alu0100825893/ubuntu)
 
 # Notas sobre el funcionamiento:
-*Si la base de datos no contiene ningun registro, al guardar se crear pero no se visualizan. Para visualizarlos refrescar la pagina de la aplicacion.
-*Una vez hayan 4 resgistros en la base de datos, se visualizan sin tener que refrescar.
+* Si la base de datos no contiene ningun registro, al guardar se crear pero no se visualizan. Para visualizarlos refrescar la pagina de la aplicacion.
+* Una vez hayan 4 resgistros en la base de datos, se visualizan sin tener que refrescar.
