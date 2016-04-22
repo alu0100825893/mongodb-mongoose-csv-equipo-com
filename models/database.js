@@ -28,20 +28,20 @@ var iniciar = module.exports.iniciar = function() {
     Csv = mongoose.model("Csv", CsvSchema);
     
     mongoose.connection.close();
-}
+};
 
 //Función para solicitar los datos guardados y así generar botones
 var getBotones = module.exports.getBotones = function(res) {
     
     mongoose.connect('mongodb://localhost/baseDatos');
-    var findedEnv
+    var findedEnv;
     Csv.find({}, (err, finded) => {
         findedEnv = finded;
-        res.render('layout', { title: 'CSV ajax', botones: findedEnv})
+        res.render('layout', { title: 'CSV ajax', botones: findedEnv});
         mongoose.connection.close();
     });
     
-}
+};
 
 //Función para guardar una entrada en la base de datos
 var guardarEntrada = module.exports.guardarEntrada = function(req, res) {
@@ -53,7 +53,7 @@ var guardarEntrada = module.exports.guardarEntrada = function(req, res) {
     let answer;
     
     Csv.find({}, (err, finded) => {
-        console.log("error",err)
+        console.log("error",err);
         numEntradas = finded.length;
         console.log("num entradas",numEntradas);
     }).then( (value) => {
@@ -101,19 +101,19 @@ var guardarEntrada = module.exports.guardarEntrada = function(req, res) {
                         () => {
                             res.send(answer.toString());
                             mongoose.connection.close();
-                        })
-                })
-            })
+                        });
+                });
+            });
             
         }
-    })
-}
+    });
+};
 
 //Lee la info del boton
 var queryBoton = module.exports.queryBoton = function(req, res) {
     
      mongoose.connect('mongodb://localhost/baseDatos');
-    console.log(req.query.botonId)
+    console.log(req.query.botonId);
     let request = req.query.botonId;
     Csv.find({numeroRegistro: request}, (err, finded) => { 
         let answer = finded[0].contenido;
@@ -121,4 +121,4 @@ var queryBoton = module.exports.queryBoton = function(req, res) {
         mongoose.connection.close();
     });
     
-}
+};

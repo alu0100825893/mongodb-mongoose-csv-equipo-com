@@ -29,5 +29,19 @@
  * Al hacer click en uno de estos botones se carga el ejemplo con ese nombre desde la base de datos en la textarea de entrada
 * Despliegue su aplicación en c9.io. En los enlaces de entrega (README.md y taller) especifique la URL de c9.io
 
+# Instrucciones para ver el funcionamiento:
+*Acceder a una máquina de c9
+*Clonar el repositorio:  git clone https://github.com/alu0100825893/mongodb-mongoose-csv-equipo-com.git
+*Instalar las dependencias: npm install
+*Crear una carpeta "data": mkdir data
+*En una terminal ejecutar: ./mongod
+*En otra terminal ejecutar: node hello.js
+*La aplicacion deberia estar corriendo en el enlace de abajo.
+
+
 # ENLACE A LA APLICACIÓN EN C9
 ##### [ENLACE A C9.io](https://ide.c9.io/alu0100825893/ubuntu)
+
+# Notas sobre el funcionamiento:
+*Si la base de datos no contiene ningun registro, al guardar se crear pero no se visualizan. Para visualizarlos refrescar la pagina de la aplicacion.
+*Una vez hayan 4 resgistros en la base de datos, se visualizan sin tener que refrescar.

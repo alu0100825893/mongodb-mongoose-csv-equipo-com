@@ -1,12 +1,12 @@
 "use strict";
 
-var express = require('express')
-var csv = require('./csv');
-var app = express()
+var express = require('express');
+var csv = require('./models/csv');
+var app = express();
 // https://nodejs.org/api/path.html
-var path = require("path")
+var path = require("path");
 var mongoose = require('mongoose');
-var database = require('./database.js');
+var database = require('./models/database.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +32,7 @@ app.set('port', (process.env.PORT || 5000));
  */
 
 // instruct the app to use the `bodyParser()` middleware for all routes
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // A browser's default method is 'GET', so this
@@ -49,7 +49,7 @@ app.get('/', (req, res)  => {
 
 
 app.get('/calculate', (req, res) =>{
-      var answer = csv.calculate(req.query.csvString)
+      var answer = csv.calculate(req.query.csvString);
       res.send(answer);
 
 });

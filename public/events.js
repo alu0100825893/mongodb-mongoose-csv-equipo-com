@@ -26,10 +26,10 @@ const resultTemplate = `
                 $("#finaltable").html(parsedTemplate);
            }
            , error: function(jqXHR, textStatus, err){
-               alert('text status '+textStatus+', err '+err)
+               alert('text status '+textStatus+', err '+err);
            }
-        })
-    }
+        });
+    };
 
     const ajaxRequestBDGet = (idBoton)  => {
             $.ajax({
@@ -41,24 +41,27 @@ const resultTemplate = `
                    $('#original').val(data);
                }
                , error: function(jqXHR, textStatus, err){
-                   alert('text status '+textStatus+', err '+err)
+                   alert('text status '+textStatus+', err '+err);
                }
-            })
-        }
+            });
+        };
     const ajaxRequestSave = (input)  => {
         var nombr = prompt("Escribe un nombre");
-        $.ajax({
-           url: '/mongo/save',
-           type: 'GET',
-           data: {nombre: nombr , contenido: input.value},
-               success: function(data){
-                   $("#" + data + " span").text(nombr);
-               }
-               , error: function(jqXHR, textStatus, err){
-                   console.error('text status '+textStatus+', err '+err)
-               }
-        });
-    }
+        if (nombr != null) {
+            if (nombr == "") nombr = "Sin nombre";
+            $.ajax({
+               url: '/mongo/save',
+               type: 'GET',
+               data: {nombre: nombr , contenido: input.value},
+                   success: function(data){
+                       $("#" + data + " span").text(nombr);
+                   }
+                   , error: function(jqXHR, textStatus, err){
+                       console.error('text status '+textStatus+', err '+err);
+                   }
+            });
+        }
+    };
 
     const dump = (fileName) => {
             $('#andAnimation').toggleClass('animation1');
@@ -71,10 +74,10 @@ const resultTemplate = `
             });
         var reader = new FileReader();
         reader.onload = function(e) {
-            console.log(e.target)
+            console.log(e.target);
             let input = e.target.result;
             $('#original').val(input);
-        }
+        };
         var c = reader.readAsText(fileName);
     };
     
@@ -101,7 +104,7 @@ const resultTemplate = `
         let ulnode=document.createElement("UL");
         for (var i = 0, f; f = files[i]; i++) {
             if (files[i]) {
-                dump(files[i])
+                dump(files[i]);
             } else { alert("Failed to load file"); }
 
             let linode=document.createElement("LI");
@@ -116,7 +119,7 @@ const resultTemplate = `
 
         var list=document.getElementById("list");
         list.insertBefore(ulnode,list.childNodes[2]);
-  }
+  };
   
  
 
@@ -147,12 +150,12 @@ const resultTemplate = `
         $('#files').change(handleFileSelect);
         $('#buttonSave').click(() => {
             ajaxRequestSave(original);
-        })
+        });
         
         $('.botonQuery').click((event) => {
-            console.log(event.currentTarget)
+            console.log(event.currentTarget);
             ajaxRequestBDGet(event.currentTarget.id.toString());
-        })
+        });
             
             
         // document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
@@ -162,7 +165,7 @@ const resultTemplate = `
                 localStorage.original = original;
             ajaxRequest(original);
 
-        })
+        });
         var dropZone = document.getElementById('drop_zone');
         dropZone.addEventListener('dragover', handleDragOver, false);
         dropZone.addEventListener('drop', handleFileSelect, false);

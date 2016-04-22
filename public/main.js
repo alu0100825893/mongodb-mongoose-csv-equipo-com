@@ -45,7 +45,7 @@ function readSingleFile(evt) {
 		  //Una vez cargado, sustituir el contenido el textarea
 		  $("#original").val('');
 	      $("#original").val(e.target.result);
-      }
+      };
       r.readAsText(f);
     } else {
       alert("No se ha cargado ningún archivo");
