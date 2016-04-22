@@ -22,6 +22,16 @@ table, th, td {
   text-align: left;
   padding: 5px; }
 
+.saveentry {
+  background-color: #407040;
+  text-align: center;
+  padding: 5px; }
+  .saveentry:hover {
+    background-color: #70BB70; }
+
+#buttonSave {
+  width: 200px; }
+
 #finaltable:hover td {
   background-color: green; }
 

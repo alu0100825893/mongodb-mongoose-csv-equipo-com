@@ -37,6 +37,19 @@ table , th, td {
   padding: $padding-filestyle;
 }
 
+.saveentry {
+  background-color:#407040;
+  text-align: center;
+  padding: $padding-filestyle;
+  &:hover {
+    background-color:#70BB70;
+  }
+}
+
+#buttonSave {
+  width: 200px;
+}
+
 #finaltable:hover td {
   background-color: green;
 }

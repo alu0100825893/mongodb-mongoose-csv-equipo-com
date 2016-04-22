@@ -33,24 +33,27 @@
         <button id ="input4" type="button" onclick="dump('input4.txt');">Input4</button>
         </td>
       </tr>
-      
       <tr>
-        <td class="filestyle">
+        <td class="filestyle" colspan="2">
+          Entradas guardadas (database):
+            <% botones.forEach(function(elemnto, i) { %>
+            <button id='<%= elemnto.nombre %>' ><%= elemnto.nombre %></button>
+            <% }); %>
+        </td>
+      </tr>
+      <tr>
+        <td class="saveentry" colspan="2">
           <button id ="buttonSave" type="button">Guardar entrada</button>
         </td>
       <tr>
+      
     </table>
 
     <div style="text-align:center;">
-
+    
+    
+      
     <div id="button" class="btn">Validate</div><br>
-    
-    
-    <div>
-      <% botones.forEach(function(elemnto, i) { %>
-      <button id='<%= elemnto.nombre %>' ><%= elemnto.nombre %></button>
-      <% }); %>
-    <div>
     
     </div>
 
