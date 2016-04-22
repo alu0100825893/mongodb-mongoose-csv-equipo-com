@@ -58,12 +58,12 @@ var Csv = mongoose.model("Csv", CsvSchema);
 
 mongoose.connection.close();
 
-app.get('/', function(req, res) {
+app.get('/', (req, res)  => {
     
     mongoose.connect('mongodb://localhost/baseDatos');
     
     var findedEnv
-    Csv.find({}, function (err, finded) {
+    Csv.find({}, (err, finded) => {
         findedEnv = finded;
         res.render('layout', { title: 'CSV ajax', botones: findedEnv})
         mongoose.connection.close();
@@ -77,6 +77,20 @@ app.get('/calculate', function (req, res){
 
 });
 
+app.get('/mongo/queryBoton', function (req, res){
+    mongoose.connect('mongodb://localhost/baseDatos');
+    console.log(req.query.botonId)
+    let request = req.query.botonId;
+    //   var answer = csv.calculate(req.query.botonId)
+    //   res.send(answer);
+    Csv.find({numeroRegistro: request}, function (err, finded) { 
+        let answer = finded[0].contenido;
+        res.send(answer);
+        mongoose.connection.close();
+    });
+
+});
+
 app.get('/mongo/save', function (req, res){
     mongoose.connect('mongodb://localhost/baseDatos');
     
@@ -85,8 +99,9 @@ app.get('/mongo/save', function (req, res){
     let elementoAct;
     
     Csv.find({}, function (err, finded) {
+        console.log("error",err)
         numEntradas = finded.length;
-        console.log(numEntradas);
+        console.log("num entradas",numEntradas);
     }).then( (value) => {
         if(numEntradas < 4) {
             //Se pueden crear registros
