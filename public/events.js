@@ -55,7 +55,7 @@ const resultTemplate = `
                    $("#" + data + " span").text(nombr);
                }
                , error: function(jqXHR, textStatus, err){
-                   alert('text status '+textStatus+', err '+err)
+                   console.error('text status '+textStatus+', err '+err)
                }
         });
     }
