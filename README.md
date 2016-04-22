@@ -10,7 +10,7 @@
 * [Página de la asignatura PL Miguel](https://alu0100886870.github.io/pl.html)
 * [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/mongodb-mongoose-csv-equipo-com)
 * [Fork-Con los Issues](https://github.com/alu0100825893/mongodb-mongoose-csv-equipo-com)
-* [DESPLIEGUE EN C9](https://ide.c9.io/alu0100825893/ubuntu)
+* [DESPLIEGUE EN C9. Maquina](https://ide.c9.io/alu0100825893/ubuntu)
 
 # Práctica PL.
 
@@ -36,11 +36,12 @@
 * Crear una carpeta "data": mkdir data
 * En una terminal ejecutar: ./mongod
 * En otra terminal ejecutar: node hello.js
-* La aplicacion deberia estar corriendo en el enlace de abajo.
+* La aplicacion deberia estar corriendo en un enlace como el de abajo.
+* https://nombreMaquina-nombreUsuario.c9.io/
 
 
 # ENLACE A LA APLICACIÓN EN C9
-##### [ENLACE A C9.io](https://ide.c9.io/alu0100825893/ubuntu)
+##### [ENLACE A C9.io](https://ubuntu-alu0100825893.c9.io/)
 
 # Notas sobre el funcionamiento:
 * Si la base de datos no contiene ningun registro, al guardar se crear pero no se visualizan. Para visualizarlos refrescar la pagina de la aplicacion.
