@@ -150,6 +150,7 @@ const resultTemplate = `
         })
         
         $('.botonQuery').click((event) => {
+            console.log(event.currentTarget)
             ajaxRequestBDGet(event.currentTarget.id.toString());
         })
             

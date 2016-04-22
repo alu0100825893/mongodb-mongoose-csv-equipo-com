@@ -44,12 +44,13 @@ var getBotones = module.exports.getBotones = function(res) {
 }
 
 //Función para guardar una entrada en la base de datos
-var guardarEntrada = module.exports.guardarEntrada = function(req) {
+var guardarEntrada = module.exports.guardarEntrada = function(req, res) {
     mongoose.connect('mongodb://localhost/baseDatos');
     
     let numEntradas;
     let numReg;
     let elementoAct;
+    let answer;
     
     Csv.find({}, (err, finded) => {
         console.log("error",err)
@@ -89,6 +90,7 @@ var guardarEntrada = module.exports.guardarEntrada = function(req) {
             
             Csv.find({elementoActual : true}, (err, finded) => {
                 numReg = finded[0].numeroRegistro;
+                answer = numReg;
             }).then( (value) => {
                 let siguiente = (numReg + 1) % 4;
                 if (siguiente == 0) siguiente = 4;
@@ -97,6 +99,7 @@ var guardarEntrada = module.exports.guardarEntrada = function(req) {
                     Csv.update({numeroRegistro : numReg},
                         {nombre: req.query.nombre, contenido : req.query.contenido, elementoActual : false},
                         () => {
+                            res.send(answer.toString());
                             mongoose.connection.close();
                         })
                 })

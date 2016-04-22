@@ -61,7 +61,7 @@ app.get('/mongo/queryBoton', (req, res) =>{
 
 app.get('/mongo/save', (req, res) => {
     
-    database.guardarEntrada(req);
+    database.guardarEntrada(req, res);
 
 });
 
