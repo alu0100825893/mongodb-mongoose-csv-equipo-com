@@ -30,13 +30,13 @@
 * Despliegue su aplicación en c9.io. En los enlaces de entrega (README.md y taller) especifique la URL de c9.io
 
 # Instrucciones para ver el funcionamiento:
-*Acceder a una máquina de c9
-*Clonar el repositorio:  git clone https://github.com/alu0100825893/mongodb-mongoose-csv-equipo-com.git
-*Instalar las dependencias: npm install
-*Crear una carpeta "data": mkdir data
-*En una terminal ejecutar: ./mongod
-*En otra terminal ejecutar: node hello.js
-*La aplicacion deberia estar corriendo en el enlace de abajo.
+* Acceder a una máquina de c9
+* Clonar el repositorio:  git clone https://github.com/alu0100825893/mongodb-mongoose-csv-equipo-com.git
+* Instalar las dependencias: npm install
+* Crear una carpeta "data": mkdir data
+* En una terminal ejecutar: ./mongod
+* En otra terminal ejecutar: node hello.js
+* La aplicacion deberia estar corriendo en el enlace de abajo.
 
 
 # ENLACE A LA APLICACIÓN EN C9
