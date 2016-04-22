@@ -37,7 +37,7 @@
         <td class="filestyle" colspan="2">
           Entradas guardadas (database):
             <% botones.forEach(function(elemnto, i) { %>
-            <button class="botonQuery" id='<%= elemnto.numeroRegistro %>' ><%= elemnto.nombre %></button>
+            <button class="botonQuery" id='<%= elemnto.numeroRegistro %>' ><span><%= elemnto.nombre %></span></button>
             <% }); %>
         </td>
       </tr>

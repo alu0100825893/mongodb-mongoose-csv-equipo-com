@@ -79,7 +79,6 @@ app.get('/calculate', (req, res) =>{
 
 app.get('/mongo/queryBoton', (req, res) =>{
     mongoose.connect('mongodb://localhost/baseDatos');
-    console.log(req.query.botonId)
     let request = req.query.botonId;
     Csv.find({numeroRegistro: request}, (err, finded) => { 
         let answer = finded[0].contenido;
@@ -89,17 +88,15 @@ app.get('/mongo/queryBoton', (req, res) =>{
 
 });
 
-app.get('/mongo/save', (req, res) => {
+app.get('/mongo/save', (req, respuesta) => {
     mongoose.connect('mongodb://localhost/baseDatos');
     
     let numEntradas;
     let numReg;
     let elementoAct;
-    
+    var answer;
     Csv.find({}, (err, finded) => {
-        console.log("error",err)
         numEntradas = finded.length;
-        console.log("num entradas",numEntradas);
     }).then( (value) => {
         if(numEntradas < 4) {
             //Se pueden crear registros
@@ -134,6 +131,7 @@ app.get('/mongo/save', (req, res) => {
             
             Csv.find({elementoActual : true}, (err, finded) => {
                 numReg = finded[0].numeroRegistro;
+                answer = numReg;
             }).then( (value) => {
                 let siguiente = (numReg + 1) % 4;
                 if (siguiente == 0) siguiente = 4;
@@ -142,11 +140,11 @@ app.get('/mongo/save', (req, res) => {
                     Csv.update({numeroRegistro : numReg},
                         {nombre: req.query.nombre, contenido : req.query.contenido, elementoActual : false},
                         () => {
+                            respuesta.send(answer.toString());
                             mongoose.connection.close();
                         })
                 })
             })
-            
         }
     })
     

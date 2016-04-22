@@ -50,7 +50,13 @@ const resultTemplate = `
         $.ajax({
            url: '/mongo/save',
            type: 'GET',
-           data: {nombre: nombr , contenido: input.value}
+           data: {nombre: nombr , contenido: input.value},
+               success: function(data){
+                   $("#" + data + " span").text(nombr);
+               }
+               , error: function(jqXHR, textStatus, err){
+                   alert('text status '+textStatus+', err '+err)
+               }
         });
     }
 
@@ -144,8 +150,7 @@ const resultTemplate = `
         })
         
         $('.botonQuery').click((event) => {
-            console.log(event.toElement.id.toString())
-            ajaxRequestBDGet(event.toElement.id.toString());
+            ajaxRequestBDGet(event.currentTarget.id.toString());
         })
             
             
