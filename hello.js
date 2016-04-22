@@ -71,19 +71,17 @@ app.get('/', (req, res)  => {
 });
 
 
-app.get('/calculate', function (req, res){
+app.get('/calculate', (req, res) =>{
       var answer = csv.calculate(req.query.csvString)
       res.send(answer);
 
 });
 
-app.get('/mongo/queryBoton', function (req, res){
+app.get('/mongo/queryBoton', (req, res) =>{
     mongoose.connect('mongodb://localhost/baseDatos');
     console.log(req.query.botonId)
     let request = req.query.botonId;
-    //   var answer = csv.calculate(req.query.botonId)
-    //   res.send(answer);
-    Csv.find({numeroRegistro: request}, function (err, finded) { 
+    Csv.find({numeroRegistro: request}, (err, finded) => { 
         let answer = finded[0].contenido;
         res.send(answer);
         mongoose.connection.close();
@@ -91,14 +89,14 @@ app.get('/mongo/queryBoton', function (req, res){
 
 });
 
-app.get('/mongo/save', function (req, res){
+app.get('/mongo/save', (req, res) => {
     mongoose.connect('mongodb://localhost/baseDatos');
     
     let numEntradas;
     let numReg;
     let elementoAct;
     
-    Csv.find({}, function (err, finded) {
+    Csv.find({}, (err, finded) => {
         console.log("error",err)
         numEntradas = finded.length;
         console.log("num entradas",numEntradas);
@@ -120,7 +118,7 @@ app.get('/mongo/save', function (req, res){
                 "elementoActual" : elementoAct
             });
             
-            let p1 = csvTemp.save(function (err) { 
+            let p1 = csvTemp.save( (err) => { 
               if (err) console.log("Algo ha ido mal en el guardado");
             });
             
@@ -134,7 +132,7 @@ app.get('/mongo/save', function (req, res){
             //Se reutilizan registros
             console.log("reutilizando reg");
             
-            Csv.find({elementoActual : true}, function (err, finded) {
+            Csv.find({elementoActual : true}, (err, finded) => {
                 numReg = finded[0].numeroRegistro;
             }).then( (value) => {
                 let siguiente = (numReg + 1) % 4;
@@ -154,19 +152,7 @@ app.get('/mongo/save', function (req, res){
     
 });
 
-// app.get('/', function(req, res){
-//   // The form's action is '/' and its method is 'POST',
-//   // so the `app.post('/', ...` route will receive the
-//   // result of our form
-//   res.sendfile(__dirname + '/public/index.html');
-// });
 
-// app.get('/tests', function(req, res){
-//   // The form's action is '/' and its method is 'POST',
-//   // so the `app.post('/', ...` route will receive the
-//   // result of our form
-//   res.sendfile(__dirname + '/public/test/index.html');
-// });
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'));
 });

@@ -15,17 +15,7 @@ const resultTemplate = `
 </div>
 `;
 
-// `
-// <div>
-//      <% _.each(name.value, function(cell) { %>
-//       <td><%= cell %></td>
-//      <% }); %>
-// <div>
-// `
-
-
     const ajaxRequest = (input)  => {
-        //console.log(input);
         $.ajax({
            url: '/calculate',
            type: 'GET',
@@ -42,7 +32,6 @@ const resultTemplate = `
     }
 
     const ajaxRequestBDGet = (idBoton)  => {
-            //console.log(input);
             $.ajax({
                url: '/mongo/queryBoton',
                type: 'GET',
@@ -63,7 +52,6 @@ const resultTemplate = `
            type: 'GET',
            data: {nombre: nombr , contenido: input.value}
         });
-        //$.get( "/mongo/save", { contenido: original } );
     }
 
     const dump = (fileName) => {
@@ -146,8 +134,6 @@ const resultTemplate = `
 
 
     $(document).ready(() => {
-        // ajaxRequestBD();
-        //console.log(resultTemplate)
         if (window.localStorage && localStorage.original) {
             original.value = localStorage.original;
         }
